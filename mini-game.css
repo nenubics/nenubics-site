@@ -1,0 +1,57 @@
+/* Стили для мини-игры */
+.mini-game {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%; /* Игра на всю ширину */
+}
+
+.game-container {
+  position: relative;
+  width: 100%; /* Контейнер на всю ширину */
+  height: 200px; /* Увеличим высоту для удобства */
+  margin: 0 auto;
+  background: #2a2a40;
+  border: 2px solid #6a5acd;
+  overflow: hidden;
+}
+
+.game-container .player {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 40px; /* Увеличим размер динозавра */
+  height: 40px;
+  background: url('images/dino.png') no-repeat center center; /* Добавим текстуру */
+  background-size: cover;
+  transition: bottom 0.3s;
+}
+
+.game-container .obstacle {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  width: 40px; /* Увеличим размер препятствия */
+  height: 40px;
+  background: url('images/cactus.png') no-repeat center center; /* Добавим текстуру */
+  background-size: cover;
+  animation: moveObstacle 2s linear infinite;
+}
+
+@keyframes moveObstacle {
+  from {
+    right: -40px;
+  }
+  to {
+    right: 100%; /* Препятствие движется до конца экрана */
+  }
+}
+
+.game-container .jump {
+  bottom: 100px !important; /* Высота прыжка */
+}
+
+.score {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #e0e0ff;
+}
